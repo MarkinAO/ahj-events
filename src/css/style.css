@@ -1,0 +1,68 @@
+:root {
+    --main-color: #d30202;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrap {
+    display: flex;
+    margin-top: 100px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ctrl-panel {
+    display: flex;
+    margin: 15px 0;
+}
+
+.ctrl-panel-item {
+    max-width: 150px;
+    margin: 5px;
+    padding: 10px 30px;
+    text-align: center;
+    font-size: 22px;
+    color: #ffffff;
+    background-color: var(--main-color);
+    border: none;
+    border-radius: 5%;
+}
+
+.ctrl-panel-btn:hover {
+    cursor: pointer;
+    box-shadow: 0 0 3px 1px #000000;
+}
+
+.field-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 550px;
+}
+
+.field-item {
+    margin: 5px;
+    width: 120px;
+    height: 120px;
+    background-color: var(--main-color);    
+    border-radius: 5%;
+}
+
+.field-item:hover {
+    cursor: pointer;
+    box-shadow: 0 0 3px 1px #000000;
+}
+
+.field-item:active {
+    cursor: url('../img/hammer.png'), sw-resize;
+}
+
+.goblin {
+    background-image: url("../img/goblin.png");
+}
+
+.hidden {
+    display: none;
+}
