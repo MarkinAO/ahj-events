@@ -23,7 +23,7 @@ export default class GameControl {
 
     this.intId = setInterval(() => {
       this.releaseGoblin();
-    }, 1000);
+    }, 700);
   }
 
   releaseGoblin() {
@@ -38,6 +38,7 @@ export default class GameControl {
       if (!field[index].classList.contains("goblin")) flag = false;
     }
 
+    this.accessField = true;
     this.gameFieldWidget.removeGoblin();
     this.gameFieldWidget.showGoblin(index);
   }
@@ -45,6 +46,7 @@ export default class GameControl {
   onCellClick(event) {
     event.preventDefault();
     if (!this.accessField) return;
+    this.accessField = false;
     const field = this.gameFieldWidget.field;
     const index = field.indexOf(event.target);
 
