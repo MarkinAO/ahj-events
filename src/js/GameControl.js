@@ -20,6 +20,12 @@ export default class GameControl {
     this.gameFieldWidget.draw();
     this.panelWidget.showScore();
     this.accessField = true;
+    this.startGoblinJumps();    
+  }
+
+  startGoblinJumps() {
+    if(this.intId) clearInterval(this.intId);
+    this.gameFieldWidget.removeGoblin();
 
     this.intId = setInterval(() => {
       this.releaseGoblin();
@@ -52,8 +58,9 @@ export default class GameControl {
 
     if (index !== -1 && field[index].classList.contains("goblin")) {
       this.panelWidget.addHit();
+      this.startGoblinJumps();
     } else {
-      this.panelWidget.addMiss();
+      this.panelWidget.addMiss();      
     }
     this.checkScore();
   }
